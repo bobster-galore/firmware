@@ -1,4 +1,4 @@
-# Freifunk Firmware Berlin "Kathleen"
+# Freifunk Firmware Berlin "Hedy"
 https://wiki.freifunk.net/Berlin:Firmware
 
 *[Kathleen Booth](https://en.wikipedia.org/wiki/Kathleen_Booth) was the author of the first assembly language*.
