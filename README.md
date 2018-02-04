@@ -1,9 +1,9 @@
 # Freifunk Firmware Berlin "Hedy"
 https://wiki.freifunk.net/Berlin:Firmware
 
-*[Hedy Lamarr](https://en.wikipedia.org/wiki/Hedy_Lamarr#Inventor) and composer George Antheil developed in 1942 a torpedo guidance system using spread spectrum and frequency hopping technology which is still the base for Wi-Fi and other radio technologies.
+*[Hedy Lamarr](https://en.wikipedia.org/wiki/Hedy_Lamarr#Inventor) and composer George Antheil developed in 1942 a torpedo guidance system using spread spectrum and frequency hopping technology which is still the base for Wi-Fi and other radio technologies*.
 
-The purpose for this release is to have a stable firmware for beginners for the Freifunk mesh in Berlin.
+This release will help to catch up with [OpenWrt](https://wiki.openwrt.org/start) development and to offer a stable firmware for Freifunk mesh in Berlin.
 The firmware is based on vanilla [OpenWrt](https://wiki.openwrt.org/start) "Chaos Calmer" with some modifications (to fix
 broken stuff in OpenWrt itself or for example LuCI) and additional default packages/configuration settings.
 New features like a new network concept will be part of future releases.
