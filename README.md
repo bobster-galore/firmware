@@ -1,7 +1,7 @@
 # Freifunk Firmware Berlin "Hedy"
 https://wiki.freifunk.net/Berlin:Firmware
 
-*[Kathleen Booth](https://en.wikipedia.org/wiki/Kathleen_Booth) was the author of the first assembly language*.
+*[Hedy Lamarr](https://en.wikipedia.org/wiki/Hedy_Lamarr#Inventor) and composer George Antheil developed in 1942 a torpedo guidance system using spread spectrum and frequency hopping technology which is still the base for Wi-Fi and other radio technologies.
 
 The purpose for this release is to have a stable firmware for beginners for the Freifunk mesh in Berlin.
 The firmware is based on vanilla [OpenWrt](https://wiki.openwrt.org/start) "Chaos Calmer" with some modifications (to fix
