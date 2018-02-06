@@ -3,6 +3,7 @@
 ## Version 1.0.0
 
 Firmware:
+```
 d17f34e113 config: set BUILD_TYPE=release
 20e25c82d6 Makefile: do not include git-revision in filename of releases
 524bf974ec Makefile: update release-hack
@@ -164,6 +165,7 @@ a05e97b6ac profiles: update profiles to board names
 d888c21df6 add support for LEDE
 ebe7cf9bff assemble-firmware: add parameter "-e"
 a66896d3ca Makefile: use openwrt/files to embedd files directly into image
+```
 
 packages:
 
