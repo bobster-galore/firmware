@@ -4,165 +4,56 @@
 
 Firmware:
 ```
-d17f34e113 config: set BUILD_TYPE=release
 20e25c82d6 Makefile: do not include git-revision in filename of releases
-524bf974ec Makefile: update release-hack
-37c884dfa6 Makefile: workaround to allow releasing
-e6a44da8f3 Makefile: detect if we running on a special host
 708240926d Makefile: prefix images with "hedy"
-024ba575ad config: set Release-Name "Hedy-1.0.0"
 caa7958715 packages: remove "migration" for Hedy-1.0.0
-1ea456fcf8 config: set VERSION to Hedy-1.0.0-rc
 23de946c74 config: explicitly add options regarding version-info in filenames
 ec06e30ea4 Makefile: add setting "SET_BUILDBOT"
 cad82aea78 Makefile: add BUILD env "IS_BUILDBOT"
-4ff2c2d631 Merge branch 'packages/notunnel'
 64cd8de4b1 patches: do not run policy-routing script on interface ffuplink
 c81f697d9a Revert "profiles: disable all 4MB-targets"
 ba3cb3f41e netifd: update to git HEAD version (2017-03-07)
 5550d6bb52 configs: add package ffuplink-notunnel
-3800686f94 configs: add kmod_veth
-92ccc54e86 packages: create empty list for 4MB-targets of vpn03, tunnel_berlin
 da52348b99 packages: change "default" as notunnel-setup
-f6feba5841 packages: add variant for uplink w/o tunnel
-c45b9b6055 update packages-berlin to HEAD (2 Feb 2018)
-cd1f5bfa2f update OpenWRT-routing to lede-17.01 HEAD (2 Feb 2018)
-7183bc6c38 update LuCI-feed to HEAD of lede-17.01-branch (2 Feb 2018)
-81e9f5dda4 update OpenWRT-packages to HEAD of lede-17.01 branch (2 Feb 2018)
 0b7aa08806 Add "diffutils" and "patch" to optional packages
 d3c50b6d67 hostapd: disable 802.11 legacy-rates by default
-618a9e138f Revert "patches: add "fix-meshid" for ieee802.11s"
-567f31c0e4 update LuCI-feed to HEAD of lede-17.01-branch (23 Jan 2018)
-11ad3307a3 update OpenWRT-packages to HEAD of lede-17.01 branch (23 Jan 2018)
-916c71d200 update OpenWRT-routing to lede-17.01 HEAD (15 Jan 2018)
-47db7e2934 update to HEAD of LEDE-17.01 (22 Jan 2018)
-3a11623858 switch to primary OpenWRT Repo-URL
-613b84d215 Revert "add support for LEDE" to follow remerge with OpenWRT
-97b86bec79 update to HEAD of LEDE-17.01 (30 Dec 2017)
 696871104f Add Raspberry Pi 3 configuration
-d84f5f2b52 update to HEAD of LEDE-17.01 (16 Dec 2017)
-de04c020e7 feeds: update OpenWRT-routing to lede-17.01 HEAD (Dec 7, 2017)
-c8365bdfa1 feeds: update LuCI-feed to HEAD of lede-17.01-branch (Dec 2, 2017)
-823d2af23e feeds: update openwrt-packages to HEAD of lede-17.01 branch (Dec 2, 2017)
-72df4e4b0f update to HEAD of LEDE-17.01 (8 Dec 2017)
-7e68b61228 RaspberryPi: fix wrong filenames and profile-name
 7251b6648f added RaspberryPi configuration
 398aee0684 configs: in preinit and failsafe change network to 192.168.42.1/24
 1b45bfce15 patches: use olsrd v0.9.0.3
-8a5f046e1a patches: change etc/openwrt_release to contain build-revision
-07e9d690e4 config: update to HEAD of LEDE-17.01 (Oct 25, 2017)
-061f489a32 patches: add "fix-meshid" for ieee802.11s
-a33755ecf3 feeds: update packages-berlin to HEAD (Oct 29, 2017)
 a0d1ca0ecd backport Ubiquiti ERX SFP to LEDE 17.01
-749d462358 patches: fix 3cf833c
-8cfc6fadab feeds: update LuCI-feed to HEAD of lede-17.01-branch (Oct 18, 2017)
-2cb53c096c feeds: update openwrt-packages to HEAD of lede-17.01 branch (Oct 16, 2017)
-3cf833ccd0 config: update LEDE to HEAD of 17.01-branch (Oct 18, 2017)
 590a07ef19 profiles: remove GL.iNet GL-MT750
-37636086a5 patches: fix Xen-x86-domU + serial-console
-d615ce1ab7 packages: cosmetic-change - reorder list of packages
-d7dca87377 adapt to new packages for VPN03 and tunnel-berlin
-7739d59bfe config: update to HEAD of LEDE-17.01 branch (3. Oct 2017)
-c1dca95efa feeds: update to HEAD of Packages/LuCI/Routing feeds (3. Oct 2017)
-65467d3986 feeds: update packages_berlin
-e6e70c28f8 feeds: update OpenWRT-LuCI to lede-17.01 HEAD (Aug 20, 2017)
-5580afcf27 feeds: update OpenWRT-routing to lede-17.01 HEAD (Jul 10, 2017)
-07bcbefd9c feeds: update OpenWRT-packages to lede-17.01 HEAD (Sep 15, 2017)
-950b7ff3a8 config: update LEDE 17.01 to HEAD (Sep 14, 2017)
 972e689370 assemble_firmware: skip usecases with empty package-list
-75d328eac3 assemble_firmware: fix usage of space / tab
-9e7deaf193 config: update to LEDE 17.01 HEAD (Aug 17, 2017)
-6d79975cf0 feeds: update berlin-packages (Aug 28, 2017)
-71238c9edb feeds: update openwrt-luci to lede-17.01-HEAD (Aug 7, 2017)
-c3996fc4c1 feeds: update openwrt-packages to lede-17.01-HEAD (Aug 13, 2017)
-3aaaf158fe feeds: update berlin packages to HEAD (Aug 16, 2017)
-79b97eefb6 Merge pull request #473 from freifunk-berlin/add-libustream-mbedtls-to-default-backbone-image
-60aec8d86e config: fix "update to LEDE-17.01 HEAD (Tue, 25 Jul 2017)"
 3dd9eaf575 Allow ICMP for busybox traceroute
-cf1fa38dc2 config: update to LEDE-17.01 HEAD (Tue, 25 Jul 2017)
 8f5085c6f6 configs: build kmod-nf-nathelper-extra as module
 789cb17c6a packages: add libustream-mbedtls to default and backbone package set
 cdfd3b0b5e add packages to support ipip-tunnels
-bf1c877c91 update berlin-packages (Jun 24, 2017)
-4bfe948e6b feeds: update routing, LuCI, packages
-80ef4feadf update LEDE to 17.01 HEAD (Wed, 28 Jun 2017)
-f75f5a9439 config: update LEDE to V17.01.2 (Sat, 10 Jun 2017)
-67d14775c6 configs: add i2c and gpio modules for ramips-mt7621
-9ab17688e2 Makefile: fix dependencies when patching LEDE
-a386a2d78e configs: remove explicitly selected i2c-stuff
 0ce68fcba0 profiles: add ubnt-erx-sfp for ramips-mt7621
 4176688fc3 patches: add Ubiquiti EdgeRouter X-SFP (UBNT-ERX-SFP) support
 35e8419d27 packages: add tcpdump to the default package set
-db47a2d24e assemble_firmware: workaround for failing imagebuilder when "BIN_DIR" is defined
 f8dc9aa640 profiles: add TP-Link WR1043ND-v4
 8765a27ee5 added some buffalo ar71xx targets
-023850a219 Readme: note about target images usage
 97eef0a600 Makefile: new target images to only create the firmware-images
-f2add41295 feeds: update berlin-packages
-436df00f78 config: update LEDE-17.01 HEAD
-8f58766564 feeds: update openwrt-packages and openwrt-luci
-072459ea88 config: update LEDE to 17.01-HEAD
 fa11c670b6 profiles: enable TPLink Archer C5 V1
-9c75627e0b Merge pull request #461 from SvenRoederer/add_some_packages
 ac6dd7c412 configs: add iperf3 and collectd-modules conntrack, irq
 d02b09ff62 configs: add PPPoE-support
-c78ade1737 Merge pull request #453 from freifunk-berlin/improve_Makefile
-4c44264d35 Merge pull request #456 from freifunk-berlin/deprecate_6to4
 6621d89260 README: add TARGET ramips-mt7621
-cb7789cc8d feeds: update packages (fix issue #454)
-5555359d08 feeds: update packages
-0ad2405352 feeds: update LuCI
-13beb2fe02 README.md: update TARGETs to new full syntax
-64dfaea367 Makefile: move files instead of copy
-d4465bb36f Makefile: add rule .stamp-images
 9a331fb011 configs: remove deprecated 6to4-package
-70629c31d3 Makefile: test for existing $TARGET-config
-f61ddcc3de Makefile: change updating of feeds to single commands
-4c07e3abce Makefile: also remove sdk and imagebuilder from builddir on clean-target
-eb1767c9b6 Merge branch 'issue_432'
-2749a36a02 feeds: update LuCI
-58f92e33e5 feeds: update packages
-543f85632e config,feeds: update LEDE, packages and LuCI
-99ce8de2ae README, CHANGELOG: update for Kathleen 0.3.0
-6606e57cd0 config.mk: update to LEDE v17.01.1
-2f725a2b95 feeds: update berlin-packages
-9264040e57 feeds: update LuCI
-c2bc113f81 feeds: update packages
-a2bee31513 config,feeds: update LEDE, packages and LuCI
-45e50734e5 Revert "profiles: disable GLinet MT300a"
 86330521ff Makefile: IB_BUILD_DIR is obsoleted by assemble_firmware.sh
 cdc1404263 Makefile: remove unused TOOLCHAIN_PATH
 86e155c2df configs: select collectd-dhcp-addon by default
-fb8557bf01 feeds: update berlin-packages
-5de5f99206 profiles: disable GLinet MT300a
-9a63e55e1c configs: set release to Hedy 1.0.0-alpha
 e7b8a364d5 Makefile: define separate target for VERSION.txt
 38d96a486e assemble_firmware: check for usecase-file
-75933e3c93 configs: remove faulty tab
-eab03437c4 config, feeds: update to LEDE 17.01.0 release
-be2a7879a9 Makefile: use "$(MAINTARGET)-$(SUBTARGET)" instead of $(TARGET)
 105d293ef9 assemble_firmware: check for files in embedded-directory
 ef11714b86 Makefile: fix embedded-files/
-de96d19c73 patches/banner: update to new version number handling
-c2573c9973 embedded-files: Revert embedding banner-file
 274cd8131a add arch ramips-mt7621 to build for EdgeRouter X
 d1d7755eaf profiles: add GL-Inet GL-MT300A, GL-MT300N, GL-MT750
-28db5dd06c Merge pull request #420 from freifunk-berlin/SAm0815/build_with_lede
-7cd6280bb1 Makefile: update renaming to new imagenames
-2fb40b2061 Makefile: put revision-hash in CONFIG_VERSION_CODE
 827d03c43e profiles: disable all 4MB-targets
 785c9bde58 configs, packages: use OpenVPN-openssl for RSA1024-keys
-048493a6fa configs, packages: libpolarssl has been replaced by libmbedtls
 b8292dec06 configs, packages: uhttpd-mod-tls has been removed
 f9de53e543 configs/common: use px5g-polarssl instead of deprecated px5g
 d65f5fa17b configs: enable telnet client
 d2f4aa74bb configs: disable "HORST", which fails to build
-282c926c79 remove kmod-ipv6
-a05e97b6ac profiles: update profiles to board names
-3328677ef0 Makefile: handle non-existing imagebuilder, sdk or toolchain
-74ca01da94 Makefile: use xz for imagebuilder and sdk
-7cc815a20d Makefile: correct package copy into the new lede structure
-d888c21df6 add support for LEDE
 ebe7cf9bff assemble-firmware: add parameter "-e"
 a66896d3ca Makefile: use openwrt/files to embedd files directly into image
 ```
