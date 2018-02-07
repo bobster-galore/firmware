@@ -59,6 +59,112 @@ a66896d3ca Makefile: use openwrt/files to embedd files directly into image
 ```
 
 packages:
+```
+e6fed163b network-defaults: quieten grep
+84a4af853 network-default: adapt ffuplink-policyrouting for OpenVPN
+cfd5e06bf openvpn-defaults: also put default-route in ip-rule ffuplink
+21f38cdf2 network-defaults: blocking of ffuplink-net needs to be before default-route
+0ef067746 network-defaults: removing setup of default-gw for ffuplink
+2e44ee693 network-defaults: setup the ip rules at runtime
+2df127c7a network-defaults: prohibit traffic to net on ffuplink
+2632bdf1e network-defaults: fix routing prio for ffuplink
+f8c33d5c5 ffuplink: prepare routing to deny access to uplink-lan
+f363ea348 uplink-notunnel: configure veth-dev via uci network
+d384da286 openvpn: recreate OpenVPN settings everytime
+4781eae65 uplink-notunnel: setup masquerading
+08474427d uplink-notunnel: setup default-route via hotplug.d
+5e8f501c2 wizard, uplink-files: add uci-setting to request different auth-types
+cbada6a85 uplink-notunnel: fix dependency to kmod-veth
+1d1a0f68f ffuplink-notunnel: add hotplug-script
+d8d099853 uplink-notunnel: initial commit
+19cb3cddd dhcp-defaults: don't announce as default-gw
+98f0a3442 ffwizard: adapt to new hostname from "system-defaults" package
+a29d9a4d3 system-defaults: change the default hostname
+29d50b741 Merge pull request #124 from freifunk-berlin/feature/add_ffuplink
+68543446b migration: rename firewall-zone "ffvpn" to "ffuplink"
+a940a00df rename interface "ffvpn" to "ffuplink"
+b9d449fb1 network-defaults: set "wan" as bridge
+07483a62b migration: fix "set VPN03-connection to UDPv4 only"
+209534036 uplink-vpn03,tunnelberlin: explicitly define IP-Masquerading setting
+1af9063d1 ffwizard: remove dependency to freifunk-uplink
+a59f7a4d9 uplink-tunnel: update deprecated OpenVPN-option "ns_cert_type"
+1ea497b60 uplinks: add a virtual "freifunk-berlin-uplink" package
+e284bc9bd add new package: freifunk-berlin-uplink-tunnelberlin-files
+c1df4dc50 migration: changes for new firewall-zone "ffvpn"
+02fb2519b firewall-defaults, wizard: add separate zone ffvpn
+1288c3dc9 ffwizard, migration: don't create cronjob to restart "wan"
+89c4373b7 Merge pull request #117 from freifunk-berlin/tunnel
+914337021 migration: run as 1st of freifunk-berlin scripts
+359c074b2 vpn03, openvpn: split basic openvpn-setup from vpn03-setup
+11b98dd9a vpn03: change guard-option to reflect new package-name
+83335f4e7 openvpn: rename openvpn-files to vpn03-files
+086cd4fa0 wizard-backend: move internet_tunnel to wan firewall zone (enables nat on vpn)
+1806d6178 wizard-backend: make sure openvpn can reach the server
+a055be247 wizard-backend: fix interface in olsr config
+77158e971 wizard-backend: use mark 1 for tunnels (0x42 didn't work)
+a08be1521 freifunk-defaults: change our settings, which differ from upstream
+b5dbbeab8 wizard-backend: minor policy routing and openvpn fix
+eb1cfa35f wizard-backend: send tunnel packets to main-default only
+f10125153 wizard-backend: add mesh_tunnel
+47fb29641 wizard-backend: adapt to new json schema
+9c2b8a167 wizard-berlin: bump version to 1.0.0-beta.3
+cd988b2b6 wizard-backend: configure internet tunnel routes properly
+65f9e039d wizard-backend: create uci openvpn config
+bc98e377b wizard-backend: replace some openvpn options
+001f39585 wizard-backend: add openvpn tunnel configuration
+5fe3b2f2b wizard-backend: use proper uplink interface in olsrd dyn gw plugin
+6f19ba347 olsrd-defaults, migration: bump version as of merge of PR #112
+0fab43b6a freifunk-defaults: drop call of guard()
+e7e850669 firewall-defaults: only commit firewall settings in UCI
+7aff3d7fd freifunk-defaults: don't copy non-existing files in Makefile
+c3af984c9 Merge pull request #113 from freifunk-berlin/freifunk-defaults
+b0ae29f3c Merge pull request #107 from freifunk-berlin/ffwizard_remove-privateAP
+1a52c4caa Merge pull request #112 from freifunk-berlin/olsrd-ipversion-6
+e75872789 Merge pull request #115 from freifunk-berlin/add-system-status-page
+5a0bc08c9 Merge pull request #114 from freifunk-berlin/bugfix-olsr-status
+7fe50c043 wizard-beackend: enable http headers by default for olsrd info plugins
+74c3d3fa5 Merge pull request #116 from freifunk-berlin/policy-routing
+f17dc7323 wizard-backend: fix olsrd dyn gw detection
+f710b1158 Revert "wizard-backend: find olsr library versions"
+fa2598b90 wizard-backend: prepare vpnEnabled option in network config
+a2f03e4e3 wizard-backend: set noscan for all hw_n devices
+2f1776dc2 wizard-backend: use table ids < 2**8 because of olsrd2
+bfb149e27 wizard-backend: fix policy routing issues
+b4da9d90d wizard-backend: find olsr library versions
+008552fed wizard-backend: setup policy routing
+036257d7d add acls to access status information
+d1f3ef464 wizard-backend: set up routing tables in network config
+ee231e3cd remove http header from nc-result
+bdf56f482 Merge branch 'owm_cleanup'
+d4521b1b4 luci-app-owm: bump version
+fa8619e2a freifunk-berlin-freifunk-defaults: use uci-default script
+e6e396507 freifunk-berlin-olsrd-defaults: explicitly set IpVersion to 6 for olsrd6
+41ea9464b guard: add function "rename_guard <src> <dest>"
+8b7e40011 openvpn-files: depend on virtual-package openvpn-crypto
+d8a9c5eb2 lua-app-owm: adapt code to new wifinets and wifidevs api
+ae5b6cc3b luci-app-owm: remove some empty lines
+f7b0ad0bf luci-app-owm: rename v to interface and fix unused loop variable problem
+6ea3cea62 luci-app-owm: rename ip to ip_addr to prevent shadowing
+6863eb64f luci-app-owm: remove unused loop variable and rename loop variable
+30361f8aa luci-app-owm: don't redefine variable
+6a79a35ba luci-app-owm: remove dead code for firmware information
+5bfa27b3e luci-app-owm: remove unused ubus variables
+df341c50c luci-app-owm: move ipv6Addresses in upper scope
+2f640ae67 luci-app-owm: define loop variables in loop
+547b39b0b luci-app-owm: rename variable v to link to prevent shadowing
+f011a7a4f luci-app-owm: remove unused variable 'os'
+b8540100d luci-app-owm: remove neightbl specific code
+68d1caec0 luci-app-owm: don't pollute the global namespace
+1e03f3153 luci-app-owm: define variables in the scope where we use them
+67a9c701b luci-app-owm: remove unused variables
+6b852c4de luci-app-owm: remove unused variables/requires
+d1fe032c1 luci-app-owm: remove obviously dead code
+386263c88 luci-app-owm: remove trailing whitespaces
+cc4699603 rearrange tree
+49b7bfcf7 ffwizard: bump version
+f845b3bb3 ffwizard: drop private AP-feature
+6fe8f081f ffwizard: switch to new path of upload-dir
+```
 
 ## Version 0.3.0
 
