@@ -116,6 +116,19 @@ also check the releasenotes of underlying LEDE releases
 * https://lede-project.org/releases/17.01/notes-17.01.1
 * https://lede-project.org/releases/17.01/notes-17.01.0
 
+packages
+```
+fa3a118d collectd: fix for uptime plugin
+938db714 collectd: upstream fix for vulnerabity in network plugin CVE-2017-7401
+```
+
+LuCI
+```
+mesh 802.11s config
+```
+
+
+
 ## Version 0.3.0
 
 * OpenWrt ChaosCalmer of Mar 09, 2017 (9a1fd3e)
