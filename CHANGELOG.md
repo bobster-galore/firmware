@@ -110,11 +110,11 @@ f5f5f583f9 hostapd: backport fix for wnm_sleep_mode=0
 e626942c33 dnsmasq: load instance-specific conf-file if exists
 ```
 also check the releasenotes of underlying LEDE releases
-https://lede-project.org/releases/17.01/notes-17.01.4
-https://lede-project.org/releases/17.01/notes-17.01.3
-https://lede-project.org/releases/17.01/notes-17.01.2
-https://lede-project.org/releases/17.01/notes-17.01.1
-https://lede-project.org/releases/17.01/notes-17.01.0
+* https://lede-project.org/releases/17.01/notes-17.01.4
+* https://lede-project.org/releases/17.01/notes-17.01.3
+* https://lede-project.org/releases/17.01/notes-17.01.2
+* https://lede-project.org/releases/17.01/notes-17.01.1
+* https://lede-project.org/releases/17.01/notes-17.01.0
 
 ## Version 0.3.0
 
