@@ -2,60 +2,74 @@
 
 ## Version 1.0.0
 
-Firmware:
+### packages
+```
+caa7958715 packages: remove "migration" for Hedy-1.0.0
+64cd8de4b1 patches: do not run policy-routing script on interface ffuplink
+5550d6bb52 configs: add package ffuplink-notunnel (as image-flavor "defaut")
+0b7aa08806 Add "diffutils" and "patch" to optional packages
+3dd9eaf575 Allow ICMP for busybox traceroute
+8f5085c6f6 configs: build kmod-nf-nathelper-extra as module
+cdfd3b0b5e add packages to support setup of ipip-tunnels (also for LuCI)
+35e8419d27 packages: add tcpdump to the default package set
+ac6dd7c412 configs: add iperf3 and collectd-modules conntrack, irq
+d02b09ff62 configs: add PPPoE-support
+9a331fb011 configs: remove deprecated 6to4-package
+86e155c2df configs: select collectd-dhcp-addon by default
+d2f4aa74bb configs: disable "HORST", which fails to build
+```
+
+### hardware-support
+```
+696871104f Add Raspberry Pi 3 configuration
+7251b6648f added RaspberryPi configuration
+a0d1ca0ecd backport Ubiquiti ERX SFP to LEDE 17.01
+f8dc9aa640 profiles: add TP-Link WR1043ND-v4
+8765a27ee5 added some buffalo ar71xx targets
+```
+
+### feeds
+```
+5e8f501c2 wizard, uplink-files: add uci-setting to request different auth-types
+19cb3cddd dhcp-defaults: don't announce as default-gw
+41ea9464b guard: add function "rename_guard <src> <dest>"
+f845b3bb3 ffwizard: drop private AP-feature
+1288c3dc9 ffwizard, migration: don't create cronjob to restart "wan"
+a08be1521 freifunk-defaults: change our settings, which differ from upstream
+fa8619e2a freifunk-berlin-freifunk-defaults: use uci-default script
+8b7e40011 openvpn-files: depend on virtual-package openvpn-crypto
+fa3a118d collectd: fix for uptime plugin
+938db714 collectd: upstream fix for vulnerabity in network plugin CVE-2017-7401
+3f6a27fbf luci-mod-admin-full: Add mesh_fwding support
+33f6527cc luci-mod-admin-full: Add meshId support
+426c1043b luci-mod-admin-full: auto-migrate ifnames when changing VLAN configuration
+6e412cc78 luci-mod-admin-full: reload wifi settings page after changing countey code
+1cd096d29 luci-mod-admin-full: allow unset txpower value
+```
+
+### build
 ```
 20e25c82d6 Makefile: do not include git-revision in filename of releases
 708240926d Makefile: prefix images with "hedy"
-caa7958715 packages: remove "migration" for Hedy-1.0.0
-23de946c74 config: explicitly add options regarding version-info in filenames
 ec06e30ea4 Makefile: add setting "SET_BUILDBOT"
 cad82aea78 Makefile: add BUILD env "IS_BUILDBOT"
-64cd8de4b1 patches: do not run policy-routing script on interface ffuplink
-c81f697d9a Revert "profiles: disable all 4MB-targets"
-ba3cb3f41e netifd: update to git HEAD version (2017-03-07)
-5550d6bb52 configs: add package ffuplink-notunnel
-da52348b99 packages: change "default" as notunnel-setup
-0b7aa08806 Add "diffutils" and "patch" to optional packages
-d3c50b6d67 hostapd: disable 802.11 legacy-rates by default
-696871104f Add Raspberry Pi 3 configuration
-7251b6648f added RaspberryPi configuration
-398aee0684 configs: in preinit and failsafe change network to 192.168.42.1/24
-1b45bfce15 patches: use olsrd v0.9.0.3
-a0d1ca0ecd backport Ubiquiti ERX SFP to LEDE 17.01
-590a07ef19 profiles: remove GL.iNet GL-MT750
 972e689370 assemble_firmware: skip usecases with empty package-list
-3dd9eaf575 Allow ICMP for busybox traceroute
-8f5085c6f6 configs: build kmod-nf-nathelper-extra as module
-789cb17c6a packages: add libustream-mbedtls to default and backbone package set
-cdfd3b0b5e add packages to support ipip-tunnels
-0ce68fcba0 profiles: add ubnt-erx-sfp for ramips-mt7621
-4176688fc3 patches: add Ubiquiti EdgeRouter X-SFP (UBNT-ERX-SFP) support
-35e8419d27 packages: add tcpdump to the default package set
-f8dc9aa640 profiles: add TP-Link WR1043ND-v4
-8765a27ee5 added some buffalo ar71xx targets
-97eef0a600 Makefile: new target images to only create the firmware-images
-fa11c670b6 profiles: enable TPLink Archer C5 V1
-ac6dd7c412 configs: add iperf3 and collectd-modules conntrack, irq
-d02b09ff62 configs: add PPPoE-support
-6621d89260 README: add TARGET ramips-mt7621
-9a331fb011 configs: remove deprecated 6to4-package
+97eef0a600 Makefile: new target "images" to only create the firmware-images
 86330521ff Makefile: IB_BUILD_DIR is obsoleted by assemble_firmware.sh
 cdc1404263 Makefile: remove unused TOOLCHAIN_PATH
-86e155c2df configs: select collectd-dhcp-addon by default
 e7b8a364d5 Makefile: define separate target for VERSION.txt
-38d96a486e assemble_firmware: check for usecase-file
 105d293ef9 assemble_firmware: check for files in embedded-directory
-ef11714b86 Makefile: fix embedded-files/
-274cd8131a add arch ramips-mt7621 to build for EdgeRouter X
-d1d7755eaf profiles: add GL-Inet GL-MT300A, GL-MT300N, GL-MT750
+a66896d3ca Makefile: use openwrt/files to embedd files directly into image
+```
+
+Firmware:
+```
+c81f697d9a Revert "profiles: disable all 4MB-targets"
+d3c50b6d67 hostapd: disable 802.11 legacy-rates by default
+398aee0684 configs: in preinit and failsafe change network to 192.168.42.1/24
+1b45bfce15 patches: use olsrd v0.9.0.3
 827d03c43e profiles: disable all 4MB-targets
 785c9bde58 configs, packages: use OpenVPN-openssl for RSA1024-keys
-b8292dec06 configs, packages: uhttpd-mod-tls has been removed
-f9de53e543 configs/common: use px5g-polarssl instead of deprecated px5g
-d65f5fa17b configs: enable telnet client
-d2f4aa74bb configs: disable "HORST", which fails to build
-ebe7cf9bff assemble-firmware: add parameter "-e"
-a66896d3ca Makefile: use openwrt/files to embedd files directly into image
 ```
 
 packages:
@@ -63,40 +77,17 @@ packages:
 2e44ee693 network-defaults: setup the ip rules at runtime
 2df127c7a network-defaults: prohibit traffic to net on ffuplink
 08474427d uplink-notunnel: setup default-route via hotplug.d
-5e8f501c2 wizard, uplink-files: add uci-setting to request different auth-types
-19cb3cddd dhcp-defaults: don't announce as default-gw
 98f0a3442 ffwizard: adapt to new hostname from "system-defaults" package
 a29d9a4d3 system-defaults: change the default hostname
 a940a00df rename interface "ffvpn" to "ffuplink"
 b9d449fb1 network-defaults: set "wan" as bridge
-07483a62b migration: fix "set VPN03-connection to UDPv4 only"
 e284bc9bd add new package: freifunk-berlin-uplink-tunnelberlin-files
 02fb2519b firewall-defaults, wizard: add separate zone ffvpn
-1288c3dc9 ffwizard, migration: don't create cronjob to restart "wan"
-a08be1521 freifunk-defaults: change our settings, which differ from upstream
-e7e850669 firewall-defaults: only commit firewall settings in UCI
-7aff3d7fd freifunk-defaults: don't copy non-existing files in Makefile
-c3af984c9 Merge pull request #113 from freifunk-berlin/freifunk-defaults
-b0ae29f3c Merge pull request #107 from freifunk-berlin/ffwizard_remove-privateAP
-1a52c4caa Merge pull request #112 from freifunk-berlin/olsrd-ipversion-6
-e75872789 Merge pull request #115 from freifunk-berlin/add-system-status-page
-5a0bc08c9 Merge pull request #114 from freifunk-berlin/bugfix-olsr-status
-74c3d3fa5 Merge pull request #116 from freifunk-berlin/policy-routing
-bdf56f482 Merge branch 'owm_cleanup'
-d4521b1b4 luci-app-owm: bump version
-fa8619e2a freifunk-berlin-freifunk-defaults: use uci-default script
-e6e396507 freifunk-berlin-olsrd-defaults: explicitly set IpVersion to 6 for olsrd6
-41ea9464b guard: add function "rename_guard <src> <dest>"
-8b7e40011 openvpn-files: depend on virtual-package openvpn-crypto
-d8a9c5eb2 lua-app-owm: adapt code to new wifinets and wifidevs api
-b8540100d luci-app-owm: remove neightbl specific code
-f845b3bb3 ffwizard: drop private AP-feature
-6fe8f081f ffwizard: switch to new path of upload-dir
+
 ```
 OpenWRT
 ```
 d5278cc48b kernel: bump 4.4 to 4.4.112 for 17.01
-2603c85060 wireguard: bump to 20171221
 7f78a86254 hostapd: set mcast_rate in mesh mode
 91e48304a9 openvpn: add support to start/stop single instances
 77e79b2dd0 openvpn: update to 2.4.4
@@ -116,20 +107,6 @@ also check the releasenotes of underlying LEDE releases
 * https://lede-project.org/releases/17.01/notes-17.01.1
 * https://lede-project.org/releases/17.01/notes-17.01.0
 
-packages
-```
-fa3a118d collectd: fix for uptime plugin
-938db714 collectd: upstream fix for vulnerabity in network plugin CVE-2017-7401
-```
-
-LuCI
-```
-3f6a27fbf luci-mod-admin-full: Add mesh_fwding support
-33f6527cc luci-mod-admin-full: Add meshId support
-426c1043b luci-mod-admin-full: auto-migrate ifnames when changing VLAN configuration
-6e412cc78 luci-mod-admin-full: reload wifi settings page after changing countey code
-1cd096d29 luci-mod-admin-full: allow unset txpower value
-```
 
 Routing
 ```
