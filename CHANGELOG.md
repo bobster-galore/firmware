@@ -17,6 +17,7 @@ d02b09ff62 configs: add PPPoE-support
 9a331fb011 configs: remove deprecated 6to4-package
 86e155c2df configs: select collectd-dhcp-addon by default
 d2f4aa74bb configs: disable "HORST", which fails to build
+6d0c0dd52c configs: add package luci-app-wifischedule
 ```
 
 ### hardware-support
