@@ -124,10 +124,20 @@ fa3a118d collectd: fix for uptime plugin
 
 LuCI
 ```
-mesh 802.11s config
+3f6a27fbf luci-mod-admin-full: Add mesh_fwding support
+33f6527cc luci-mod-admin-full: Add meshId support
+426c1043b luci-mod-admin-full: auto-migrate ifnames when changing VLAN configuration
+6e412cc78 luci-mod-admin-full: reload wifi settings page after changing countey code
+1cd096d29 luci-mod-admin-full: allow unset txpower value
 ```
 
-
+Routing
+```
+285c803 batman-adv: Merge bugfixes from 2017.4
+846b6ea Update OONF to 0.14.1-1
+269baa2 batman-adv: add patches from 2016.5-maint 2017-02-21
+8109d30 batman-adv: add patches from 2016.4-maint 2017-01-04
+```
 
 ## Version 0.3.0
 
