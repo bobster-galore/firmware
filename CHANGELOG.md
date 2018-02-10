@@ -12,6 +12,9 @@ kernel: bump 4.4 to 4.4.112
 openvpn: update to 2.4.4
 Update OONF to 0.14.1-1
 batman-adv: update to 2016.5
+olsrd: stay at v 0.9.0.3 for compatibility with BBB-VPN (https://github.com/OLSR/olsrd/issues/20)
+configs: in preinit and failsafe change network to 192.168.42.1/24
+for 4MB-models there ist only enough space in the default-image
 ```
 
 ### packages
@@ -77,10 +80,6 @@ a66896d3ca Makefile: use openwrt/files to embedd files directly into image
 
 Firmware:
 ```
-c81f697d9a Revert "profiles: disable all 4MB-targets"
-398aee0684 configs: in preinit and failsafe change network to 192.168.42.1/24
-1b45bfce15 patches: use olsrd v0.9.0.3
-827d03c43e profiles: disable all 4MB-targets
 785c9bde58 configs, packages: use OpenVPN-openssl for RSA1024-keys
 ```
 
