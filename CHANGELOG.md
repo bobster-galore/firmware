@@ -2,6 +2,18 @@
 
 ## Version 1.0.0
 
+### overall system
+```
+rename interface "ffvpn" to "ffuplink"
+move interface "ffvpn" into its own firewall-zone
+network-defaults: set interface "wan" as bridge
+hostapd: disable 802.11 legacy-rates by default
+kernel: bump 4.4 to 4.4.112
+openvpn: update to 2.4.4
+Update OONF to 0.14.1-1
+batman-adv: update to 2016.5
+```
+
 ### packages
 ```
 caa7958715 packages: remove "migration" for Hedy-1.0.0
@@ -66,7 +78,6 @@ a66896d3ca Makefile: use openwrt/files to embedd files directly into image
 Firmware:
 ```
 c81f697d9a Revert "profiles: disable all 4MB-targets"
-d3c50b6d67 hostapd: disable 802.11 legacy-rates by default
 398aee0684 configs: in preinit and failsafe change network to 192.168.42.1/24
 1b45bfce15 patches: use olsrd v0.9.0.3
 827d03c43e profiles: disable all 4MB-targets
@@ -80,8 +91,6 @@ packages:
 08474427d uplink-notunnel: setup default-route via hotplug.d
 98f0a3442 ffwizard: adapt to new hostname from "system-defaults" package
 a29d9a4d3 system-defaults: change the default hostname
-a940a00df rename interface "ffvpn" to "ffuplink"
-b9d449fb1 network-defaults: set "wan" as bridge
 e284bc9bd add new package: freifunk-berlin-uplink-tunnelberlin-files
 02fb2519b firewall-defaults, wizard: add separate zone ffvpn
 
@@ -89,8 +98,6 @@ e284bc9bd add new package: freifunk-berlin-uplink-tunnelberlin-files
 OpenWRT
 ```
 d5278cc48b kernel: bump 4.4 to 4.4.112 for 17.01
-7f78a86254 hostapd: set mcast_rate in mesh mode
-91e48304a9 openvpn: add support to start/stop single instances
 77e79b2dd0 openvpn: update to 2.4.4
 c7234e3036 imagebuilder: add package_list function
 108a42bcba ramips: support jumbo frame on mt7621 up to 2k
@@ -108,14 +115,6 @@ also check the releasenotes of underlying LEDE releases
 * https://lede-project.org/releases/17.01/notes-17.01.1
 * https://lede-project.org/releases/17.01/notes-17.01.0
 
-
-Routing
-```
-285c803 batman-adv: Merge bugfixes from 2017.4
-846b6ea Update OONF to 0.14.1-1
-269baa2 batman-adv: add patches from 2016.5-maint 2017-02-21
-8109d30 batman-adv: add patches from 2016.4-maint 2017-01-04
-```
 
 ## Version 0.3.0
 
